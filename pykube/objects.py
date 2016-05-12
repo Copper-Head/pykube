@@ -40,6 +40,7 @@ class APIObject(object):
             kw["url"] = self.endpoint
         else:
             kw["url"] = "{}/{}".format(self.endpoint, self._original_obj["metadata"]["name"])
+            # IK: this is where I need to insert stuff
         if self.base:
             kw["base"] = self.base
         kw["version"] = self.version
