@@ -196,7 +196,7 @@ class Pod(NamespacedAPIObject):
 
     @property
     def logs(self):
-        return self.api_kwargs(operation='logs')
+        return self.api.get_kwargs(**self.api_kwargs(operation='logs'))
 
 
 class ReplicationController(NamespacedAPIObject, ReplicatedAPIObject):
