@@ -190,6 +190,7 @@ class Pod(NamespacedAPIObject):
 
     @property
     def ready(self):
+        self.reload()
         cs = self.obj["status"]["conditions"]
         for condition in cs:
             if condition["type"] == "Ready":
